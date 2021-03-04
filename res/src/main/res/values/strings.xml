@@ -1,0 +1,48 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Movie Catalogue</string>
+    <string name="movie_toolbar_text">Movies</string>
+    <string name="show_toolbar_text">Shows</string>
+    <string name="title_placeholder_text">Among Us</string>
+    <string name="year_text_placeholder">2020</string>
+    <string name="rating_placeholder_text">4.3/10.0</string>
+    <string name="plot_placeholder_text">Some long plot</string>
+    <string name="detail_toolbar_text">Detail</string>
+    <string name="vote_count_placeholder_text">2 voted</string>
+    <string name="runtime_placeholder_text">1h2m</string>
+    <string name="title_label">Title</string>
+    <string name="year_label">Year</string>
+    <string name="plot_label">Plot</string>
+    <string name="season_placeholder_text">2 seasons</string>
+    <string name="season_label">Season</string>
+    <string name="share_menu_title">Share</string>
+    <string name="share_menu_content_description">share</string>
+    <string name="share_movie_text">Watch %1$s with me!\n\n%2$s</string>
+    <string name="share_show_text">Watch %1$s first aired in %2$s with me!\n\n%3$s</string>
+    <string name="rating_text">%s/10.0</string>
+    <string name="show_first_aired_text">First Aired: %s</string>
+    <string name="vote_count_text" tools:ignore="PluralsCandidate">%d voted</string>
+    <string name="network_response_not_ok_text">Failed to Retrieve Data</string>
+    <string name="genre_label">Genre</string>
+    <string name="genre_placeholder_text">Fantasy</string>
+    <string name="runtime_text" tools:ignore="PluralsCandidate">%d minutes</string>
+    <string name="first_aired_label">First Aired</string>
+    <string name="episode_text" tools:ignore="PluralsCandidate">%d episodes</string>
+    <string name="episode_placeholder_text">44 episodes</string>
+    <string name="ongoing_text">Ongoing</string>
+    <string name="finished_text">Finished</string>
+    <string name="favorite_page_text">Favorite</string>
+    <string name="favorited_snackbar_text">Added to favorite list</string>
+    <string name="unfavorited_snackbar_text">Removed from favorite list</string>
+    <string name="snackbar_dismiss_text">Okay</string>
+    <string name="error_snackbar_text">Some error occurred, please try again</string>
+    <string name="favorite_toolbar_text">Your Favorites</string>
+    <string name="empty_favorite_list_text">No favorites yet</string>
+    <string name="toast_load_more_data_text">Loading data</string>
+    <string name="toast_error_loading_text">Error loading data</string>
+    <string name="alphabetically_ascending_choice_chip_text">A-Z</string>
+    <string name="alphabetically_descending_choice_chip_text">Z-A</string>
+    <string name="chronologically_descending_choice_chip_text">Most recent</string>
+    <string name="chronologically_ascending_choice_chip_text">Least recent</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="add_to_favorite_content_description">Add to Favorite</string>
+</resources>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="fabClickListener"
+            type="com.mobile.moviecatalogue.ui.ShowFabClickListener" />
+        <variable
+            name="viewmodel"
+            type="com.mobile.moviecatalogue.viewmodel.ShowDetailsViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:colorBackground"
+                android:padding="@dimen/keyline_4">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/frag_show_details_cover"
+                    style="@style/Widget.MovieCatalogue.ShapeableImageView"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/details_cover_height"
+                    android:layout_marginEnd="@dimen/keyline_2"
+                    android:scaleType="centerCrop"
+                    app:url="@{viewmodel.show.coverUrl}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:background="@color/black" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_title_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_2"
+                    android:text="@string/title_label"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemTitle"
+                    android:textStyle="italic|bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_2"
+                    android:text="@{viewmodel.show.title}"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemBody.Big"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@id/frag_show_details_title_label"
+                    tools:text="@string/title_placeholder_text" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_year_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_2"
+                    android:layout_marginTop="@dimen/keyline_4"
+                    android:text="@string/first_aired_label"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemTitle"
+                    android:textStyle="italic|bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@id/frag_show_details_title" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_year"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_2"
+                    android:text="@{viewmodel.show.firstAired}"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemBody.Big"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@id/frag_show_details_year_label"
+                    tools:text="@string/year_text_placeholder" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_season_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_2"
+                    android:layout_marginTop="@dimen/keyline_4"
+                    android:text="@string/season_label"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemTitle"
+                    android:textStyle="italic|bold"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@id/frag_show_details_year" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_season"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_2"
+                    android:text="@{Integer.toString(viewmodel.show.seasons)}"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemBody.Big"
+                    app:layout_constraintBaseline_toBaselineOf="@id/frag_show_details_season_label"
+                    app:layout_constraintStart_toEndOf="@+id/frag_show_details_season_label"
+                    app:layout_constraintTop_toTopOf="@id/frag_show_details_season_label"
+                    tools:text="@string/season_placeholder_text" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_episode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/episode_text(viewmodel.show.episodes)}"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.Subtitle2"
+                    android:layout_marginTop="@dimen/keyline_0"
+                    app:layout_constraintStart_toEndOf="@+id/frag_show_details_season_label"
+                    app:layout_constraintStart_toStartOf="@+id/frag_show_details_season"
+                    app:layout_constraintTop_toBottomOf="@+id/frag_show_details_season"
+                    tools:text="@string/episode_placeholder_text" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_rating"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_2"
+                    android:layout_marginTop="@dimen/keyline_4"
+                    android:drawableStart="@drawable/svg_star"
+                    android:drawablePadding="@dimen/keyline_2"
+                    android:gravity="center_vertical"
+                    android:text="@{Float.toString(viewmodel.show.rating).concat(`/10.0`)}"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemBody.Big"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/frag_show_details_episode"
+                    tools:text="@string/rating_placeholder_text" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_runtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_2"
+                    android:drawableStart="@drawable/svg_time"
+                    android:drawablePadding="@dimen/keyline_2"
+                    android:gravity="center_vertical"
+                    android:text="@{@string/runtime_text(viewmodel.show.runtime)}"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemBody.Big"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    app:layout_constraintTop_toBottomOf="@+id/frag_show_details_rating"
+                    tools:text="@string/runtime_placeholder_text" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewmodel.show.returningSeries == true ? @string/ongoing_text : @string/finished_text}"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemBody.Big"
+                    android:textColor="@{viewmodel.show.returningSeries == true ? @color/golden : @color/black_theme}"
+                    android:layout_marginStart="@dimen/keyline_2"
+                    app:layout_constraintBottom_toBottomOf="@+id/frag_show_details_cover"
+                    app:layout_constraintStart_toStartOf="@+id/guideline2"
+                    tools:text="@string/ongoing_text" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_genre_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/keyline_4"
+                    android:text="@string/genre_label"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frag_show_details_cover" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/frag_show_details_genre_rv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/keyline_2"
+                    android:nestedScrollingEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frag_show_details_genre_label"
+                    app:rvData="@{viewmodel.show.genres}"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_plot_label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/frag_show_details_genre_rv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/plot_label"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemTitle"
+                    android:layout_marginTop="@dimen/keyline_4" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/frag_show_details_plot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:text="@{viewmodel.show.summary}"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemBody"
+                    android:layout_marginTop="@dimen/keyline_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frag_show_details_plot_label"
+                    tools:text="@string/plot_placeholder_text" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="frag_show_details_cover,frag_show_details_episode,
+                    frag_show_details_genre_label,frag_show_details_genre_rv,frag_show_details_plot,
+                    frag_show_details_plot_label,frag_show_details_rating,frag_show_details_runtime,frag_show_details_season,
+                    frag_show_details_season_label,frag_show_details_status,frag_show_details_title,frag_show_details_title_label,
+                    frag_show_details_year,frag_show_details_year_label"
+                    android:visibility="@{viewmodel.show != null &amp;&amp; !viewmodel.errorGettingShow}"/>
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{viewmodel.show == null}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:indeterminate="true"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/network_response_not_ok_text"
+                    android:textAppearance="@style/TextAppearance.MovieCatalogue.Headline3"
+                    android:visibility="@{viewmodel.errorGettingShow}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="gone" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/frag_show_details_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/keyline_4"
+            android:layout_gravity="end|bottom"
+            android:onClick="@{() -> fabClickListener.onClick(viewmodel.show)}"
+            android:contentDescription="@string/add_to_favorite_content_description"
+            app:fabIcon="@{viewmodel.isShowFavorited}"
+            app:showFab="@{viewmodel.showFab &amp;&amp; viewmodel.show != null}" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

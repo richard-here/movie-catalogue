@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MovieCatalogue" parent="Base.Theme.MovieCatalogue" />
+    <style name="Base.Theme.MovieCatalogue" parent="Base.Theme.ThemeBuilder">
+        <item name="colorPrimary">@color/black_theme</item>
+        <item name="colorPrimaryVariant">@color/black_theme_lighter</item>
+        <item name="colorSecondary">@color/golden</item>
+        <item name="colorSecondaryVariant">@color/lighter_golden</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Primary</item>
+        <item name="tabStyle">@style/Widget.MovieCatalogue.TabLayout</item>
+        <item name="bottomNavigationStyle">@style/Widget.MovieCatalogue.BottomNavigationView</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Base.Theme.ThemeBuilder" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">?attr/colorSurface</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

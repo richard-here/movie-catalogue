@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black_theme">#151515</color>
+    <color name="black_theme_lighter">#0a0a0a</color>
+    <color name="golden">#E8B609</color>
+    <color name="lighter_golden">#ffdd03</color>
+    <color name="pastel_yellow">#fbfcd4</color>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+</resources>

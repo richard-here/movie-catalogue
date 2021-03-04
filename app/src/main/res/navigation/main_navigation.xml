@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_navigation"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/movieFragment">
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.mobile.moviecatalogue.ui.MovieFragment"
+        android:label="@string/movie_toolbar_text"
+        tools:layout="@layout/frag_movie">
+        <action
+            android:id="@+id/action_movieFragment_to_movieDetailsFragment2"
+            app:destination="@id/movieDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/showFragment"
+        android:name="com.mobile.moviecatalogue.ui.ShowFragment"
+        android:label="@string/show_toolbar_text"
+        tools:layout="@layout/frag_show">
+        <action
+            android:id="@+id/action_showFragment_to_showDetailsFragment2"
+            app:destination="@id/showDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        app:moduleName="favorite"
+        android:id="@+id/favoriteFragment"
+        android:name="com.mobile.favorite.ui.FavoriteFragment"
+        android:label="@string/favorite_toolbar_text"
+        tools:layout="@layout/frag_favorite">
+        <action
+            android:id="@+id/action_favoriteFragment_to_movieDetailsFragment2"
+            app:destination="@id/movieDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_showDetailsFragment2"
+            app:destination="@id/showDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/showDetailsFragment"
+        android:name="com.mobile.moviecatalogue.ui.ShowDetailsFragment"
+        android:label="@string/detail_toolbar_text"
+        tools:layout="@layout/frag_show_details">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="com.mobile.moviecatalogue.ui.MovieDetailsFragment"
+        android:label="@string/detail_toolbar_text"
+        tools:layout="@layout/frag_movie_details">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_movieFragment"
+        app:destination="@id/movieFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/action_global_showFragment"
+        app:destination="@id/showFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <action
+        android:id="@+id/action_global_favoriteFragment"
+        app:destination="@id/favoriteFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+</navigation>

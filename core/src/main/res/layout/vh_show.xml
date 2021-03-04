@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.mobile.core.domain.model.show.ShowOverview" />
+        <variable
+            name="clickListener"
+            type="com.mobile.core.presentation.adapter.listener.ItemClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vh_show_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rect"
+        android:backgroundTint="?attr/colorSurface"
+        android:foreground="@drawable/ripple_rounded_rect"
+        android:clickable="true"
+        android:elevation="@dimen/keyline_0"
+        android:focusable="true"
+        android:padding="@dimen/keyline_4"
+        android:onClick="@{() -> clickListener.onClickShow(item)}">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/vh_show_cover"
+            style="@style/Widget.MovieCatalogue.ShapeableImageView"
+            android:layout_width="@dimen/list_cover_width"
+            android:layout_height="@dimen/list_cover_height"
+            android:scaleType="centerCrop"
+            app:url="@{item.coverUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/black" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/vh_show_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:text="@{item.title}"
+            android:textAppearance="@style/TextAppearance.MovieCatalogue.Headline4"
+            app:layout_constraintStart_toEndOf="@+id/vh_show_cover"
+            app:layout_constraintTop_toTopOf="@+id/vh_show_cover"
+            tools:text="@string/title_placeholder_text" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/vh_show_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:text="@{@string/show_first_aired_text(item.firstAired)}"
+            android:textAppearance="@style/TextAppearance.MovieCatalogue.Subtitle2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/vh_show_cover"
+            app:layout_constraintTop_toBottomOf="@+id/vh_show_title"
+            tools:text="@string/year_text_placeholder" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/vh_show_rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:layout_marginTop="@dimen/keyline_0"
+            android:drawableStart="@drawable/svg_star"
+            android:drawablePadding="@dimen/keyline_2"
+            android:gravity="center_vertical"
+            android:text="@{@string/rating_text(Float.toString(item.rating))}"
+            android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemBody"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vh_show_cover"
+            app:layout_constraintTop_toBottomOf="@+id/vh_show_year"
+            tools:text="@string/rating_placeholder_text" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/vh_show_summary"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/keyline_4"
+            android:layout_marginTop="@dimen/keyline_2"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{item.summary}"
+            android:textAppearance="@style/TextAppearance.MovieCatalogue.ItemBody"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/vh_show_cover"
+            app:layout_constraintTop_toBottomOf="@+id/vh_show_rating"
+            tools:text="@string/plot_placeholder_text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

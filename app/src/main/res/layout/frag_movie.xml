@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewmodel"
+            type="com.mobile.moviecatalogue.viewmodel.MovieViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/frag_movie_list_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:padding="@dimen/keyline_4"
+            app:rvData="@{viewmodel.movieList}" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/keyline_4"
+            android:visibility="@{viewmodel.isLoading}"
+            android:indeterminate="true"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/keyline_4"
+            android:text="@string/network_response_not_ok_text"
+            android:textAppearance="@style/TextAppearance.MovieCatalogue.Headline3"
+            android:visibility="@{viewmodel.errorLoading}" />
+
+    </LinearLayout>
+</layout>

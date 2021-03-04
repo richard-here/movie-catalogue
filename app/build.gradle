@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: "dagger.hilt.android.plugin"
+
+apply from: '../shared_dependencies.gradle'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.mobile.moviecatalogue"
+        minSdkVersion 27
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+    }
+    dynamicFeatures = [':favorite']
+}
+
+dependencies {
+    implementation project(":res")
+    implementation project(":core")
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    api "androidx.fragment:fragment-ktx:$rootProject.fragmentKtxVersion"
+    api "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
+    api "androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
+    api "androidx.navigation:navigation-dynamic-features-fragment:$rootProject.navigationVersion"
+
+}

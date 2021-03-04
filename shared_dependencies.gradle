@@ -1,0 +1,29 @@
+dependencies {
+    implementation "androidx.core:core-ktx:$rootProject.coreKtxVersion"
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$rootProject.hiltLifecycleVersion"
+    implementation "androidx.test.espresso:espresso-idling-resource:$rootProject.idleResourceVersion"
+    implementation "androidx.paging:paging-runtime-ktx:$rootProject.pagingVersion"
+
+    implementation "com.google.android.material:material:$rootProject.mdcVersion"
+    implementation "com.google.android:flexbox:$rootProject.flexboxVersion"
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$rootProject.kotlinVersion"
+    implementation "org.koin:koin-core:$rootProject.koinVersion"
+    implementation "org.koin:koin-android:$rootProject.koinVersion"
+    implementation "org.koin:koin-android-viewmodel:$rootProject.koinVersion"
+
+    kapt "androidx.hilt:hilt-compiler:$rootProject.hiltLifecycleVersion"
+    kapt "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    testImplementation "android.arch.core:core-testing:$rootProject.androidArchTestVersion"
+    testImplementation "io.mockk:mockk:$rootProject.mockkVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$rootProject.ktxCoroutineTestVersion"
+
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakCanaryVersion"
+}

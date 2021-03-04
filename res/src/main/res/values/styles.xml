@@ -1,0 +1,24 @@
+<resources>
+    <style name="Widget.MovieCatalogue.ShapeableImageView" parent="">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MovieCatalogue.ShapeableImageView</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MovieCatalogue.ShapeableImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/corner_radius</item>
+    </style>
+    <style name="Widget.MovieCatalogue.TabLayout" parent="Widget.MaterialComponents.TabLayout.Colored">
+        <item name="tabTextAppearance">@style/TextAppearance.MovieCatalogue.TabText</item>
+        <item name="tabIndicatorColor">?attr/colorSecondary</item>
+    </style>
+    <style name="Widget.MovieCatalogue.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconTint">@color/bottom_nav_view_color</item>
+        <item name="itemTextColor">@color/bottom_nav_view_color</item>
+    </style>
+    <style name="Widget.MovieCatalogue.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <item name="checkedIcon">@null</item>
+        <item name="chipStrokeColor">@color/chip_stroke_color</item>
+        <item name="chipStrokeWidth">1dp</item>
+    </style>
+</resources>
